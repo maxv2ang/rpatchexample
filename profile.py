@@ -12,10 +12,10 @@ import geni.portal as portal
 import geni.rspec.pg as pg
 
 # Create a portal context.
-pc = portal.Context()
+# pc = portal.Context()
 
 # Create a Request object to start building the RSpec.
-request = pc.makeRequestRSpec()
+request = portal.Context.makeRequestRSpec()
  
 # Add a raw PC to the request.
 node = request.RawPC("node")
@@ -29,4 +29,4 @@ node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU20-64-STD
 # node.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
 
 # Print the RSpec to the enclosing page.
-pc.printRequestRSpec(request)
+portal.Context.printRequestRSpec(request)
